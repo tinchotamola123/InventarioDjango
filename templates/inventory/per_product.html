@@ -1,0 +1,108 @@
+{% extends '../layout.html' %}
+
+{% block content %}
+    <div class="content-section text-center">
+        <h2>Detalle Producto</h2>
+    </div>
+    <div class="content-section">
+        <div class="row mx-auto justify-content-center">
+            <div class="card m-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="cart.title text-center">
+                        Nombre Producto
+                    </h5>
+                    <div style="font-size: 30px;" class="text-center">
+                        <span><i class="fa-solid fa-warehouse" style="color: #000000;"></i></span>
+                    </div>
+                    <h3 class="text-center">
+                        {{ inventory.name }}
+                    </h3>
+                </div>
+            </div>
+            <div class="card m-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="cart.title text-center">
+                        Cantidad en stock
+                    </h5>
+                    <div style="font-size: 30px;" class="text-center">
+                        <span><i class="fa-solid fa-warehouse" style="color: #000000;"></i></span>
+                    </div>
+                    <h3 class="text-center">
+                        {{ inventory.quantiti_in_stock }}
+                    </h3>
+                </div>
+            </div>
+            <div class="card m-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="cart.title text-center">
+                        Cantidad vendida
+                    </h5>
+                    <div style="font-size: 30px;" class="text-center">
+                        <span><i class="fa-solid fa-warehouse" style="color: #000000;"></i></span>
+                    </div>
+                    <h3 class="text-center">
+                        {{ inventory.quantiti_sold }}
+                    </h3>
+                </div>
+            </div>
+            <div class="card m-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="cart.title text-center">
+                        Precio por {{ inventory.name }}
+                    </h5>
+                    <div style="font-size: 30px;" class="text-center">
+                        <span><i class="fa-solid fa-hand-holding-dollar" style="color: #000000;"></i></span>
+                    </div>
+                    <h3 class="text-center">
+                        {{ inventory.cost_per_item }}
+                    </h3>
+                </div>
+            </div>
+            <div class="card m-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="cart.title text-center">
+                        Ventas o Ganancias
+                    </h5>
+                    <div style="font-size: 30px;" class="text-center">
+                        <span><i class="fa-solid fa-hand-holding-dollar" style="color: #000000;"></i></span>
+                    </div>
+                    <h3 class="text-center">
+                        {{ inventory.sales }}
+                    </h3>
+                </div>
+            </div>
+            <div class="card m-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="cart.title text-center">
+                        Fecha de Stock
+                    </h5>
+                    <div style="font-size: 30px;" class="text-center">
+                        <span><i class="fa-solid fa-calendar-days" style="color: #000000;"></i></span>
+                    </div>
+                    <h3 class="text-center">
+                        {{ inventory.stock_date }}
+                    </h3>
+                </div>
+            </div>
+            <div class="card m-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="cart.title text-center">
+                        Fecha ultima venta
+                    </h5>
+                    <div style="font-size: 30px;" class="text-center">
+                        <span><i class="fa-solid fa-calendar-days" style="color: #000000;"></i></span>
+                    </div>
+                    <h3 class="text-center">
+                        {{ inventory.last_sales_date }}
+                    </h3>
+                </div>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-outline-success btn-sm" href="{% url 'update_inventory' inventory.id %}">Modificar Inventario</a>
+                <a class="btn btn-outline-danger btn-sm" href="{% url 'delete_inventory' inventory.id %}">Eliminar del Inventario</a>
+            </div>
+            
+            
+        </div>
+    </div>
+{% endblock %}
